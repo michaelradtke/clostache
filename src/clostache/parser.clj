@@ -1,8 +1,5 @@
 (ns clostache.parser
   "A parser for mustache templates."
-  (:use [clojure.string :only (split)]
-        [clojure.core.incubator :only (seqable?)])
-  (:refer-clojure :exclude (seqable?))
   (:require [clojure.java.io :as io]
             [clojure.string  :as str])
   (:import java.util.regex.Matcher))
@@ -258,7 +255,7 @@
         section-end-tag (= tag-type \/)
         builder (StringBuilder.)
         tail-builder (if section-tag nil (StringBuilder.))
-        elements (split tag #"\.")
+        elements (str/split tag #"\.")
         element-to-invert (if (= tag-type \^)
                             (loop [path [(first elements)]
                                    remaining-elements (rest elements)]
