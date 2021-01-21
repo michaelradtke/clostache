@@ -1,3 +1,8 @@
+1.6.0
+=====
+* Requires Clojure 1.9.0 at least
+* Does not depend on 'core.incubator' anymore
+
 1.5.0
 =====
 * Handle path whitespace consistently.
